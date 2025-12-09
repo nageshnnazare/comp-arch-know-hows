@@ -92,14 +92,6 @@ Computer architecture is the conceptual design and fundamental operational struc
 
 ## Coverage Highlights
 
-✅ **1000+ pages** of detailed technical content
-✅ **300+ ASCII diagrams** for visual learning
-✅ **Comprehensive coverage** from basics to advanced topics
-✅ **Real-world examples** and performance data
-✅ **Modern architectures** including heterogeneous systems
-✅ **Performance analysis** with practical optimization techniques
-✅ **Quick reference** with formulas, conversions, and benchmarks
-
 **Topics Include:**
 - Number systems, data representation, and Boolean algebra
 - CPU organization, pipelining, and instruction sets
