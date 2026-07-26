@@ -6,7 +6,11 @@
 
 Classification of parallel computer architectures.
 
-```
+![Flynn's taxonomy](figures/flynn.svg)
+
+<details class="ascii-diagram">
+<summary>ASCII diagram</summary>
+<pre><code>
 ┌─────────────────────────────────────────────────┐
 │         Flynn's Taxonomy (1966)                 │
 │                                                 │
@@ -56,7 +60,7 @@ SIMD (Single Instruction, Multiple Data):
 
 Example: Vector Addition
   Scalar (SISD):
-    for (i=0; i<4; i++)
+    for (i=0; i&lt;4; i++)
         C[i] = A[i] + B[i];
     
   SIMD:
@@ -91,7 +95,8 @@ MIMD (Multiple Instruction, Multiple Data):
 │  Examples: Multicore CPUs            │
 │            Distributed systems       │
 └──────────────────────────────────────┘
-```
+</code></pre>
+</details>
 
 ### 7.1.2 Parallel Programming Models
 
@@ -158,7 +163,11 @@ Task Parallel:
 
 Limits of parallel speedup.
 
-```
+![Amdahl's law](figures/amdahl.svg)
+
+<details class="ascii-diagram">
+<summary>ASCII diagram</summary>
+<pre><code>
 ┌─────────────────────────────────────────┐
 │         Amdahl's Law                    │
 │                                         │
@@ -208,7 +217,8 @@ Impact of Serial Fraction:
 Key Insight:
   Even 5% serial code limits speedup to 20×
   No matter how many processors!
-```
+</code></pre>
+</details>
 
 ## 7.2 Multicore Processors
 
@@ -308,7 +318,11 @@ Solution: Cache Coherence Protocols
 
 **MESI Protocol** (Most Common)
 
-```
+![MESI cache-coherence states](figures/mesi.svg)
+
+<details class="ascii-diagram">
+<summary>ASCII diagram</summary>
+<pre><code>
 States:
   M - Modified:   Dirty, only in this cache
   E - Exclusive:  Clean, only in this cache
@@ -384,7 +398,8 @@ On write to X:
   2. Send invalidate to cores 0,1,2
   3. Wait for acknowledgments
   4. Allow write
-```
+</code></pre>
+</details>
 
 ### 7.2.3 Memory Consistency Models
 
@@ -429,7 +444,11 @@ Memory Barrier Types:
 
 Graphics Processing Units: Massively parallel processors.
 
-```
+![CPU vs GPU cores](figures/cpu-vs-gpu.svg)
+
+<details class="ascii-diagram">
+<summary>ASCII diagram</summary>
+<pre><code>
 CPU vs GPU Philosophy:
 
 CPU: Few powerful cores
@@ -534,12 +553,12 @@ CUDA Code Example:
 __global__ void vectorAdd(float* A, float* B, 
                           float* C, int N) {
     int i = blockIdx.x * blockDim.x + threadIdx.x;
-    if (i < N)
+    if (i &lt; N)
         C[i] = A[i] + B[i];
 }
 
 // Launch with 256 threads per block
-vectorAdd<<<(N+255)/256, 256>>>(A, B, C, N);
+vectorAdd&lt;&lt;&lt;(N+255)/256, 256&gt;&gt;&gt;(A, B, C, N);
 
 Memory Hierarchy:
 ┌──────────────┬──────────┬─────────┬──────┐
@@ -558,7 +577,8 @@ Bandwidth (Typical):
   Shared:        ~2 TB/s
   Global:        200-900 GB/s
   CPU-GPU PCIe:  16-32 GB/s
-```
+</code></pre>
+</details>
 
 ### 7.3.1 GPU Performance Considerations
 

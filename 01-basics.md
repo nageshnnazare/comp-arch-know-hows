@@ -149,7 +149,11 @@ Value = (-1)^S × 1.M × 2^(E-1023)
 ```
 
 **Example: Representing 12.625₁₀**
-```
+![IEEE 754 single-precision format](figures/ieee754.svg)
+
+<details class="ascii-diagram">
+<summary>ASCII diagram</summary>
+<pre><code>
 Step 1: Convert to binary
   12.625 = 12 + 0.625
   12 = 1100₂
@@ -167,7 +171,8 @@ Step 3: Extract components
   Mantissa: 100101 (23 bits: 10010100000000000000000)
 
 Result: 0 10000010 10010100000000000000000
-```
+</code></pre>
+</details>
 
 **Special Values:**
 ```
@@ -332,10 +337,14 @@ Absorption Laws:
 
 ### 1.3.3 Logic Gates (ASCII Diagrams)
 
-```
+![Logic gate symbols](figures/logic-gates.svg)
+
+<details class="ascii-diagram">
+<summary>ASCII diagram</summary>
+<pre><code>
 AND Gate:
     A ────┐
-          │>───── A·B
+          │&gt;───── A·B
     B ────┘
 
 OR Gate:
@@ -344,11 +353,11 @@ OR Gate:
     B ────┘
 
 NOT Gate (Inverter):
-    A ────>○──── Ā
+    A ────&gt;○──── Ā
 
 NAND Gate:
     A ────┐
-          │>○─── (A·B)'
+          │&gt;○─── (A·B)'
     B ────┘
 
 NOR Gate:
@@ -365,7 +374,8 @@ XNOR Gate:
     A ────┐
           │=1○─── (A⊕B)'
     B ────┘
-```
+</code></pre>
+</details>
 
 ## 1.4 Combinational vs Sequential Logic
 
@@ -402,7 +412,11 @@ Characteristics:
 ## 1.5 Basic Computer Organization
 
 ### 1.5.1 Von Neumann Architecture
-```
+![Von Neumann architecture](figures/von-neumann.svg)
+
+<details class="ascii-diagram">
+<summary>ASCII diagram</summary>
+<pre><code>
 ┌────────────────────────────────────────────────────┐
 │                    System Bus                      │
 │              (Address, Data, Control)              │
@@ -423,10 +437,15 @@ Key Features:
 2. Sequential instruction execution
 3. Stored program concept
 4. Bottleneck: CPU-Memory bandwidth (Von Neumann bottleneck)
-```
+</code></pre>
+</details>
 
 ### 1.5.2 Harvard Architecture
-```
+![Harvard architecture](figures/harvard.svg)
+
+<details class="ascii-diagram">
+<summary>ASCII diagram</summary>
+<pre><code>
 ┌──────────┐              ┌──────────┐
 │Instruction              │   Data   │
 │  Memory  │              │  Memory  │
@@ -449,7 +468,8 @@ Key Features:
 2. Parallel access to instructions and data
 3. No Von Neumann bottleneck
 4. Used in embedded systems, DSPs
-```
+</code></pre>
+</details>
 
 ## 1.6 Binary Arithmetic
 

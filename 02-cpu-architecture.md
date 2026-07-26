@@ -4,7 +4,11 @@
 
 The Central Processing Unit (CPU) is the brain of the computer, responsible for executing instructions and performing calculations.
 
-```
+![CPU components](figures/cpu-overview.svg)
+
+<details class="ascii-diagram">
+<summary>ASCII diagram</summary>
+<pre><code>
 ┌─────────────────────────────────────────────────┐
 │                   CPU                           │
 │  ┌──────────────┐         ┌─────────────────┐   │
@@ -24,7 +28,8 @@ The Central Processing Unit (CPU) is the brain of the computer, responsible for 
                ▼
         [System Bus]
         (Data, Address, Control)
-```
+</code></pre>
+</details>
 
 ## 2.2 CPU Components
 
@@ -80,7 +85,11 @@ Comparison Operations:
 ```
 
 **Example: 4-bit ALU Block Diagram**
-```
+![ALU inputs, opcode, result and flags](figures/alu.svg)
+
+<details class="ascii-diagram">
+<summary>ASCII diagram</summary>
+<pre><code>
   A3 A2 A1 A0        B3 B2 B1 B0
    │  │  │  │         │  │  │  │
    ▼  ▼  ▼  ▼         ▼  ▼  ▼  ▼
@@ -109,7 +118,8 @@ Comparison Operations:
        ▼  ▼  ▼  ▼
       S3 S2 S1 S0 (Result)
        + Status Flags
-```
+</code></pre>
+</details>
 
 ### 2.2.2 Control Unit (CU)
 
@@ -267,7 +277,11 @@ Register Classification:
 
 The instruction cycle (fetch-decode-execute cycle) is the basic operation of the CPU.
 
-```
+![The instruction cycle](figures/instruction-cycle.svg)
+
+<details class="ascii-diagram">
+<summary>ASCII diagram</summary>
+<pre><code>
 ┌─────────────────────────────────────────────────┐
 │           INSTRUCTION CYCLE                     │
 │                                                 │
@@ -316,7 +330,8 @@ Optional Phases:
    ┌────────────────────────────────┐
    │ - Write result to register     │
    └────────────────────────────────┘
-```
+</code></pre>
+</details>
 
 **Timing Diagram:**
 ```
@@ -546,7 +561,11 @@ Used in: JVM, PostScript, Forth
 
 The datapath is the collection of functional units that perform data processing.
 
-```
+![Single-cycle datapath](figures/datapath.svg)
+
+<details class="ascii-diagram">
+<summary>ASCII diagram</summary>
+<pre><code>
 ┌────────────────────────────────────────────────────┐
 │                    DATAPATH                        │
 │                                                    │
@@ -566,7 +585,7 @@ The datapath is the collection of functional units that perform data processing.
 │       │            │                               │
 │       │            ▼                               │
 │       │     ┌─────────────┐     ┌──────────┐       │
-│       │     │  Decoder &  │────►│ Control  │       │
+│       │     │  Decoder &amp;  │────►│ Control  │       │
 │       │     │   Control   │     │ Signals  │       │
 │       │     └─────────────┘     └──────────┘       │
 │       │                                            │
@@ -595,7 +614,8 @@ Signal Flow:
 2. IR → Control Unit → Control Signals
 3. Registers → ALU → Result
 4. Result → Registers or Memory
-```
+</code></pre>
+</details>
 
 ## 2.8 Single-Cycle vs Multi-Cycle CPU
 
@@ -727,7 +747,11 @@ Memory Address    Handler Address
 ## 2.10 Modern CPU Features
 
 ### 2.10.1 Branch Prediction
-```
+![2-bit saturating counter](figures/branch-predictor.svg)
+
+<details class="ascii-diagram">
+<summary>ASCII diagram</summary>
+<pre><code>
 ┌────────────────────────────────────┐
 │      Branch Prediction             │
 │                                    │
@@ -772,7 +796,8 @@ Branch History Table (BHT):
      ┌─────────────────┐
      │Strongly Not Taken
      └─────────────────┘
-```
+</code></pre>
+</details>
 
 ### 2.10.2 Out-of-Order Execution
 ```

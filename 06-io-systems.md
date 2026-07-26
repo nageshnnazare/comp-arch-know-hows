@@ -48,7 +48,11 @@ Speed Range: 6 orders of magnitude!
 
 CPU repeatedly checks device status.
 
-```
+![Programmed I/O, interrupts and DMA](figures/io-methods.svg)
+
+<details class="ascii-diagram">
+<summary>ASCII diagram</summary>
+<pre><code>
 ┌────────────────────────────────────────┐
 │  Programmed I/O Flow                   │
 │                                        │
@@ -71,7 +75,7 @@ CPU repeatedly checks device status.
 └────────────────────────────────────────┘
 
 Example Code:
-while (status_register & BUSY_BIT) {
+while (status_register &amp; BUSY_BIT) {
     // Wait (busy loop)
 }
 // Device ready, transfer data
@@ -98,7 +102,8 @@ Example: Reading from disk (100,000 cycles)
   CPU @ 3 GHz = 3×10⁹ cycles/sec
   Disk latency = 10 ms = 0.01 sec
   Wasted cycles = 3×10⁹ × 0.01 = 30,000,000 cycles!
-```
+</code></pre>
+</details>
 
 ### 6.2.2 Interrupt-Driven I/O
 
@@ -228,7 +233,11 @@ Overhead:
 
 Device transfers data directly to/from memory without CPU.
 
-```
+![Direct Memory Access](figures/dma.svg)
+
+<details class="ascii-diagram">
+<summary>ASCII diagram</summary>
+<pre><code>
 ┌───────────────────────────────────────────┐
 │         DMA Architecture                  │
 │                                           │
@@ -358,7 +367,8 @@ Disadvantages:
   - Extra hardware (DMA controller)
   - Bus contention
   - Cache coherency issues
-```
+</code></pre>
+</details>
 
 ## 6.3 Bus Architecture
 
@@ -845,7 +855,11 @@ TRIM Command:
 
 ### 6.5.3 RAID (Redundant Array of Independent Disks)
 
-```
+![RAID levels](figures/raid.svg)
+
+<details class="ascii-diagram">
+<summary>ASCII diagram</summary>
+<pre><code>
 Combine multiple disks for performance/reliability
 
 RAID 0 (Striping):
@@ -934,7 +948,8 @@ Comparison:
 │  6   │(N-2)/N │ Fair │  Better  │ Med  │
 │ 10   │   50%  │ Best │  Best    │ High │
 └──────┴────────┴──────┴──────────┴──────┘
-```
+</code></pre>
+</details>
 
 ---
 

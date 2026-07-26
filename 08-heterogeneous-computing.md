@@ -70,7 +70,11 @@ Performance vs Power:
 
 Multi-socket systems with distributed memory.
 
-```
+![NUMA local vs remote memory](figures/numa.svg)
+
+<details class="ascii-diagram">
+<summary>ASCII diagram</summary>
+<pre><code>
 Traditional UMA (Uniform Memory Access):
 ┌──────┬──────┬──────┬──────┐
 │Core 0│Core 1│Core 2│Core 3│
@@ -191,7 +195,8 @@ NUMA optimization critical for:
 - Virtual machines
 - High-performance computing
 - Large memory footprint apps
-```
+</code></pre>
+</details>
 
 ## 8.3 Heterogeneous ISA Systems
 
@@ -199,7 +204,11 @@ NUMA optimization critical for:
 
 Different core types optimized for performance vs efficiency.
 
-```
+![ARM big.LITTLE cores](figures/big-little.svg)
+
+<details class="ascii-diagram">
+<summary>ASCII diagram</summary>
+<pre><code>
 ARM big.LITTLE:
 
 ┌───────────────────────────────────────┐
@@ -300,7 +309,8 @@ Real-world Example (Smartphone):
   Standby:  Ultra-low power mode
   
   Battery life improvement: 50-70%
-```
+</code></pre>
+</details>
 
 ### 8.3.2 Intel Hybrid Architecture (Alder Lake)
 

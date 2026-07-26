@@ -159,7 +159,11 @@ Disadvantages:
 
 ### 4.2.3 Comparison Table
 
-```
+![CISC vs RISC comparison](figures/cisc-vs-risc.svg)
+
+<details class="ascii-diagram">
+<summary>ASCII diagram</summary>
+<pre><code>
 ┌──────────────────┬─────────────┬─────────────┐
 │   Feature        │    CISC     │    RISC     │
 ├──────────────────┼─────────────┼─────────────┤
@@ -180,14 +184,19 @@ Modern Reality:
 - x86 (CISC) uses RISC-like micro-ops internally
 - ARM (RISC) has SIMD and complex features
 - Hybrid approaches dominate
-```
+</code></pre>
+</details>
 
 ## 4.3 Addressing Modes
 
 Methods to specify operand location.
 
 ### 4.3.1 Immediate Addressing
-```
+![Common addressing modes](figures/addressing-modes.svg)
+
+<details class="ascii-diagram">
+<summary>ASCII diagram</summary>
+<pre><code>
 Operand is part of the instruction
 
 ┌──────────┬──────────┐
@@ -213,7 +222,8 @@ Advantages:
 Disadvantages:
   - Limited range (instruction size)
   - Can't modify value at runtime
-```
+</code></pre>
+</details>
 
 ### 4.3.2 Register Addressing (Direct)
 ```
@@ -914,7 +924,11 @@ strlen_done:
 
 ### 4.6.1 Fixed-Length Encoding (RISC)
 
-```
+![Fixed vs variable instruction encoding](figures/instruction-encoding.svg)
+
+<details class="ascii-diagram">
+<summary>ASCII diagram</summary>
+<pre><code>
 MIPS R-Type Instruction (32 bits):
 ┌──────┬────┬────┬────┬─────┬────────┐
 │OP(6) │Rs  │Rt  │Rd  │Shamt│Funct(6)│
@@ -947,7 +961,8 @@ Example: ADDI $t0, $t1, 100
 
 Binary: 001000 01001 01000 0000000001100100
 Hex:    0x21280064
-```
+</code></pre>
+</details>
 
 ### 4.6.2 Variable-Length Encoding (CISC)
 

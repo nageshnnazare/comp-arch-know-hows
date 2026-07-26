@@ -4,7 +4,11 @@
 
 The memory hierarchy is organized by speed, cost, and capacity.
 
-```
+![The memory hierarchy](figures/memory-hierarchy.svg)
+
+<details class="ascii-diagram">
+<summary>ASCII diagram</summary>
+<pre><code>
 ┌──────────────────────────────────────────────────────┐
 │              Memory Hierarchy Pyramid                │
 │                                                      │
@@ -46,7 +50,7 @@ Memory Characteristics:
 ┌─────────────┬──────────┬───────────┬────────────┬──────────┐
 │   Level     │   Size   │   Speed   │ Cost/Byte  │ Location │
 ├─────────────┼──────────┼───────────┼────────────┼──────────┤
-│ Registers   │  <1 KB   │  0.25 ns  │  Highest   │  On-CPU  │
+│ Registers   │  &lt;1 KB   │  0.25 ns  │  Highest   │  On-CPU  │
 │ L1 Cache    │  32-128KB│  1 ns     │    ↑       │  On-CPU  │
 │ L2 Cache    │  256KB-  │  3-10 ns  │    │       │  On-CPU  │
 │             │  512KB   │           │    │       │          │
@@ -59,20 +63,25 @@ Memory Characteristics:
 └─────────────┴──────────┴───────────┴────────────┴──────────┘
 
 Note: 1 ms = 1,000 μs = 1,000,000 ns
-```
+</code></pre>
+</details>
 
 ## 3.2 Principle of Locality
 
 Memory hierarchy exploits two types of locality:
 
 ### 3.2.1 Temporal Locality
-```
+![Temporal and spatial locality](figures/locality.svg)
+
+<details class="ascii-diagram">
+<summary>ASCII diagram</summary>
+<pre><code>
 If a memory location is accessed, it's likely to be 
 accessed again in the near future.
 
 Example: Loop variables
 ┌─────────────────────┐
-│ for (i = 0; i < 10; │
+│ for (i = 0; i &lt; 10; │
 │      i++) {         │
 │     sum += i;       │ ← 'i' and 'sum' accessed
 │ }                   │   repeatedly
@@ -82,7 +91,8 @@ Access Pattern (variable 'i'):
 Time: t1  t2  t3  t4  t5  t6  t7  t8
       ↓   ↓   ↓   ↓   ↓   ↓   ↓   ↓
       i   i   i   i   i   i   i   i
-```
+</code></pre>
+</details>
 
 ### 3.2.2 Spatial Locality
 ```
@@ -157,7 +167,11 @@ Components:
 ### 3.3.3 Cache Mapping Techniques
 
 #### Direct Mapped Cache
-```
+![Cache placement policies](figures/cache-mapping.svg)
+
+<details class="ascii-diagram">
+<summary>ASCII diagram</summary>
+<pre><code>
 Each memory block maps to exactly ONE cache line.
 
 Cache Index = (Memory Address / Block Size) % Number of Cache Lines
@@ -188,7 +202,8 @@ Advantages:
 Disadvantages:
   - High conflict misses
   - Poor utilization if blocks conflict
-```
+</code></pre>
+</details>
 
 #### Fully Associative Cache
 ```
@@ -367,7 +382,11 @@ When cache is full, which line to replace?
 ### 3.3.5 Write Policies
 
 #### Write-Through
-```
+![Write-through vs write-back](figures/write-policies.svg)
+
+<details class="ascii-diagram">
+<summary>ASCII diagram</summary>
+<pre><code>
 Write to cache AND main memory simultaneously
 
 CPU Write ───┬──► Cache (update)
@@ -393,7 +412,8 @@ Optimization: Write Buffer
            │Write Buffer │────┘
            │   (Queue)   │
            └─────────────┘
-```
+</code></pre>
+</details>
 
 #### Write-Back
 ```
@@ -804,7 +824,11 @@ Virtual memory provides:
 
 ### 3.5.1 Paging
 
-```
+![Virtual to physical translation](figures/paging.svg)
+
+<details class="ascii-diagram">
+<summary>ASCII diagram</summary>
+<pre><code>
 Virtual Memory divided into fixed-size pages
 Physical Memory divided into fixed-size frames
 
@@ -897,11 +921,16 @@ Advantages:
 - Sparse tables (allocate on demand)
 - Reduced memory usage
 - Scalable
-```
+</code></pre>
+</details>
 
 ### 3.5.2 Translation Lookaside Buffer (TLB)
 
-```
+![TLB address translation](figures/tlb.svg)
+
+<details class="ascii-diagram">
+<summary>ASCII diagram</summary>
+<pre><code>
 TLB: Cache for page table entries
 
 ┌─────────────────────────────────────────────┐
@@ -962,7 +991,8 @@ Example:
         = 1 + 0.02 × 100
         = 1 + 2
         = 3 ns
-```
+</code></pre>
+</details>
 
 ### 3.5.3 Page Faults
 

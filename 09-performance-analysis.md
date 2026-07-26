@@ -71,7 +71,11 @@ Trade-offs:
 
 ### 9.2.1 Basic CPU Performance Equation
 
-```
+![CPU performance equation](figures/cpu-perf-equation.svg)
+
+<details class="ascii-diagram">
+<summary>ASCII diagram</summary>
+<pre><code>
 CPU Time = Instruction Count × CPI × Clock Cycle Time
 
 Or equivalently:
@@ -120,7 +124,8 @@ Note: MIPS can be misleading!
   - Different ISAs have different instructions
   - Same MIPS doesn't mean same performance
   - Use execution time for fair comparison
-```
+</code></pre>
+</details>
 
 ### 9.2.2 Detailed CPI Breakdown
 

@@ -201,7 +201,11 @@ Note: Hard drive manufacturers use decimal,
 
 ### Typical Latencies (Order of Magnitude)
 
-```
+![Latency ladder](figures/latency-ladder.svg)
+
+<details class="ascii-diagram">
+<summary>ASCII diagram</summary>
+<pre><code>
 ┌──────────────────────────┬────────────┬──────────┐
 │       Operation          │  Latency   │  Cycles  │
 │                          │            │ @3GHz    │
@@ -227,7 +231,8 @@ RAM            ●●●●
 SSD                      ●●●●●●●
 HDD                                  ●●●●●●●●●●●●●
 Network                                      ●●●●●●●●●●
-```
+</code></pre>
+</details>
 
 ### Bandwidth Reference
 

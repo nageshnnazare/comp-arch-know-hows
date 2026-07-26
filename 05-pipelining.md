@@ -69,7 +69,11 @@ Stage Details:
 
 ### 5.1.2 Pipeline Execution
 
-```
+![Pipelined execution](figures/pipeline-execution.svg)
+
+<details class="ascii-diagram">
+<summary>ASCII diagram</summary>
+<pre><code>
 Time ──────────────────────────────────────►
 Cycle: 1    2    3    4    5    6    7    8
 
@@ -91,8 +95,9 @@ Pipelined:  5 + (5-1) = 9 cycles
 Speedup: 25/9 = 2.78×
 
 Maximum speedup with N stages:
-  Speedup = N (when # instructions >> N)
-```
+  Speedup = N (when # instructions &gt;&gt; N)
+</code></pre>
+</details>
 
 ## 5.2 Pipeline Performance
 
@@ -263,7 +268,11 @@ Performance impact: CPI increases
 
 **Solution 2: Forwarding (Bypassing)**
 
-```
+![Forwarding solves data hazards](figures/data-hazard.svg)
+
+<details class="ascii-diagram">
+<summary>ASCII diagram</summary>
+<pre><code>
 Forward result from later stage to earlier stage
 
 Cycle: 1    2    3    4    5    6    7
@@ -293,7 +302,8 @@ Forwarding Mux at EX stage:
          From ID/EX  ──┴─► ALU
          
 No stall needed! CPI = 1
-```
+</code></pre>
+</details>
 
 **Load-Use Hazard (Unavoidable Stall)**
 
@@ -410,7 +420,11 @@ Example:
 
 **Solution 2: Predict Not Taken**
 
-```
+![Branch flushes the pipeline](figures/control-hazard.svg)
+
+<details class="ascii-diagram">
+<summary>ASCII diagram</summary>
+<pre><code>
 Assume branch not taken, continue with PC+4
 
 If prediction correct:
@@ -426,7 +440,8 @@ Correct:             [IF][ID][EX][MEM][WB]
 
 Must flush wrong-path instructions
 Penalty only on misprediction
-```
+</code></pre>
+</details>
 
 **Solution 3: Predict Taken**
 
@@ -603,7 +618,11 @@ Balance between frequency and efficiency
 
 ### 5.4.2 Superscalar Processors
 
-```
+![Superscalar organization](figures/superscalar.svg)
+
+<details class="ascii-diagram">
+<summary>ASCII diagram</summary>
+<pre><code>
 Multiple instructions issued per cycle
 
 Dual-Issue Superscalar:
@@ -655,7 +674,8 @@ Limitations:
   - Structural hazards
   
 Actual IPC: 2-3 (not 4) for 4-wide superscalar
-```
+</code></pre>
+</details>
 
 ### 5.4.3 Out-of-Order Execution (OOO)
 
